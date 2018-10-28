@@ -37,6 +37,7 @@ def top_songs_shows(category):
 	reply = "The top " + category + "are as follows: \n\n"
 	entry_list = get_rss_data(url, category)
 	for entry in (entry_list):
+		print(entry)
 		reply += str(index+1) + " " + "\n\n" + entry["name"] + "\n\n" + entry["genre"] + "\n\n" + entry["price"] +  "\n\n" + entry["releaseDate"]
 
 	return question(reply)	
@@ -54,16 +55,16 @@ def get_rss_data(url,category):
 		else:
 			name = entry["title"]
 
-		print("Name : " + name)
+		#print("Name : " + name)
 		
 		genre = entry["tags"][0]["label"]
-		print("Genre : " + genre)
+		#print("Genre : " + genre)
 
 		releaseDate = entry["im_releasedate"]["label"]
-		print("Release Date : " + releaseDate)
+		#print("Release Date : " + releaseDate)
 
 		price = entry["im_price"]["amount"]
-		print("Price : " + price)
+		#print("Price : " + price)
 		
 		entry_info["name"] = name
 		entry_info["genre"] = genre
