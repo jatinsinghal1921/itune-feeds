@@ -20,7 +20,7 @@ tvShow_list = ["tvshows","tvseries","series","seasons","tv","episodes","shows"]
 @ask.launch
 def new_ask():
     print("Launch invoked")
-    welcome = "Welcome to the itune feeds.\n\n Get to know the top rated tv shows and songs, their price, genre and related data just by saying 'show me the top Songs or Top Series'"
+    welcome = "Welcome to the Itune feeds.\n\n Get to know the top rated tv shows and songs, their price, genre and related data just by saying 'show me the top Songs or Top Series'"
     return question(welcome)
 
 
