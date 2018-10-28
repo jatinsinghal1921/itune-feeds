@@ -38,7 +38,7 @@ def top_songs_shows(category):
 	entry_list = get_rss_data(url, category)
 	for index, entry in enumerate(entry_list):
 		print(entry)
-		reply += str(index+1) + " " + "\n\n" + entry["name"] + "\n\n" + entry["genre"] + "\n\n" + entry["price"] +  "\n\n" + entry["releaseDate"]
+		reply += str(index+1) + " " + "\n\nName " + entry["name"] + "\n\nGenre " + entry["genre"] + "\n\nPrice " + entry["price"] +  "\n\nRelease Date " + entry["releaseDate"] + "\n\n"
 
 	return question(reply)	
 		
