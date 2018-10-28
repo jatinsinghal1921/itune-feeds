@@ -20,7 +20,7 @@ tvShow_list = ["tvshows","tvseries","series","seasons","tv","episodes","shows"]
 @ask.launch
 def new_ask():
     print("Launch invoked")
-    welcome = "Welcome to the Itune feeds.\n\n Get to know the top rated tv shows and songs, their price, genre and related data just by saying 'show me the top Songs or Top Series'"
+    welcome = "Welcome to the I-tune feeds.\n\n Get to know the top rated tv shows and songs, their price, genre and related data just by saying 'show me the top Songs or Top Series'"
     return question(welcome)
 
 
@@ -32,7 +32,7 @@ def top_songs_shows(category):
 	elif category in tvShow_list:
 		url = tvShow_url
 	else:
-		return question("Sorry the following category doesn't exist.\n\n Say 'top songs' or 'top series' ")	
+		return question("Sorry the following category doesn't exist.\n\n Say 'Show top songs' or 'Show top series' ")	
 
 	reply = "The top " + category + " are as follows: \n\n"
 	entry_list = get_rss_data(url, category)
@@ -78,7 +78,7 @@ def get_rss_data(url,category):
 
 @ask.intent("AMAZON.FallbackIntent")
 def fallback():
-	reply = "I didn't understand you.\n Say Top shows on itunes or Top songs on itunes to get highest rated songs and shows from itunes."
+	reply = "I didn't understand you.\n Say Show me Top shows or Show me Top songs to get highest rated songs and shows from itunes."
 	return question(reply)
 
 
@@ -96,7 +96,7 @@ def fallback():
 
 @ask.intent("AMAZON.HelpIntent")
 def fallback():
-	reply = "I didn't understand you.\n Say Top shows on itunes or Top songs on itunes to get highest rated songs and shows from itunes."
+	reply = "I didn't understand you.\n  Say Show me Top shows or Show me Top songs to get highest rated songs and shows from itunes."
 	return question(reply)
 
 
