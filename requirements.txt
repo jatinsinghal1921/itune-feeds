@@ -1,0 +1,7 @@
+Flask
+Flask-Ask
+gunicorn
+pyOpenSSL
+cryptography
+requests
+feedparser
