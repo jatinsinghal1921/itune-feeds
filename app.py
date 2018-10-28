@@ -29,18 +29,16 @@ def top_songs_shows(category):
 	category = category.lower()
 	if category in song_list:
 		url = song_url
-		name_heading = "Song is "
 	elif category in tvShow_list:
 		url = tvShow_url
-		name_heading = "Show is "
 	else:
 		return question("Sorry the following category doesn't exist.\n\n Say 'top songs' or 'top series' ")	
 
-	reply = "The top " + category + "are as follows: \n\n"
+	reply = "The top " + category + " are as follows: \n\n"
 	entry_list = get_rss_data(url, category)
 	for index, entry in enumerate(entry_list):
 		print(entry)
-		reply += str(index+1) + " \n\n" + name_heading + entry["name"] + "\n\nIts Genre is " + entry["genre"] + "\n\nIts Price is $" + entry["price"] +  "\n\nIts Release Date is " + entry["releaseDate"] + "\n\n"
+		reply += str(index+1) + " \n\n" + entry["name"] + "\n\nIts Genre is " + entry["genre"] + "\n\nIts Price is $" + entry["price"] +  "\n\nIts Release Date is " + entry["releaseDate"] + "\n\n"
 
 	return question(reply)	
 		
